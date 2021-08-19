@@ -1456,7 +1456,7 @@ function advanceQueue(){
 				}
 			}
 		
-			setTimeout(function(){
+			//setTimeout(function(){
 				if (gameState == 1 && winState == 0 && loseState == 0 && windowState == 0){
 					try{	
 						setTimeout(function(){
@@ -1469,7 +1469,7 @@ function advanceQueue(){
 					}catch(TypeError){console.log("type error");}
 				}
 		
-			}, 500)
+			//}, 500)
 		}catch(e){}
 	}
 }
