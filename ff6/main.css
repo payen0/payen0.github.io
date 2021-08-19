@@ -1,0 +1,577 @@
+/* ID'd elements */
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+html{
+	background-color: black;
+	overflow-x: hidden;
+}
+
+#upper {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    display: inline flow-root list-item;
+    height: 63.5%;
+    background-image: url(grass.png);
+	background-size: cover;	
+}
+
+#lower {
+    height: 30.5%;
+    width: 100%;
+    background-image: url("menu.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    max-width: 800px;
+    position: relative;
+    display: inline flow-root list-item;
+    margin: auto;
+}
+
+#backgroundImage, #menu{
+	height: 100%;
+	width: 100%;
+}
+
+#enemyArea, #allyArea{
+	height: 80%;
+	display: inline-block;
+	padding-left: 5%;
+	padding-top: 4%;
+}
+
+#enemyArea {
+    width: 40%;
+    position: absolute;
+    padding-left: 5%;
+    padding-top: 4%;
+}
+
+#allyArea {
+    width: 60%;
+    position: absolute;
+    margin-left: 40%;
+}
+
+#cancel{
+	z-index: -2;
+	animation: pulseRed 1s infinite;
+}
+
+#cancel > .option {
+    position: relative;
+}
+
+#cancel.subMenu{
+	opacity: 1;
+}
+
+/* classed elements */
+
+.allySprite, .enemySprite{
+	position: relative;
+	text-align: center;
+}
+
+.enemy, .ally, .textBox, .hitFrames{
+	position: absolute;
+}
+
+.textBox {
+    top: 2%;
+    width: 100%;
+    height: 20%;
+    z-index: -1;
+
+    background-image: url("textBox.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.textBox > .text {
+    width: 100%;
+    top: 15%;
+    text-align: center;
+    position: relative;
+}
+
+.textBox > img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.allySprite.terra {
+    top: 63%;
+    left: 77.5%;
+}
+
+.enemySprite, .allySprite{
+	height: 16.6%;
+	width: 10%;
+}
+
+.enemySprite > .frontSprite,.backgroundSprite.enemySprite {
+    width: 130%;
+    height: 130%;
+    left: -15%;
+    top: -15%;
+    position: absolute;
+}
+
+.enemySprite > .frontSprite{
+	z-index: 10;
+}
+
+.skillSprite {
+    height: 200%;
+    width: 200%;
+    top: -48%;
+    left: -50%;
+    position: absolute;
+    z-index: 8;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.spellBox{
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+	position: absolute;
+	z-index: 9;
+}
+
+.allySprite > .frontSprite{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 10;
+}
+
+.frontSwordFrames {
+    position: absolute;
+    width: 37%;
+}
+
+.void{
+	background-color: black !important;
+}
+
+.appArea {
+    width: 100%;
+    height: 100vw;
+    max-height: 730px;
+    max-width: 730px;
+    margin: auto;
+    min-width: 369px;
+    min-height: 369px;
+}
+
+.backgroundSprite {
+	width: 100%;
+	height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 2;
+}
+
+.idle, .fight, .attack1, .attack2, .return, .flipWalk, .walk, .hurt, .sit, .down, .cast, .cast2, .cast3{
+	position: absolute;
+	z-index: -1;
+	height: 100%;
+}
+
+.idle{
+	z-index: 2;
+}
+
+.hidden{
+	display: none !important;
+}
+
+.sword {
+    width: 7.5%;
+    z-index: -1;
+    position: absolute;
+}
+
+.sword.frame1, .sword.frame2, .sword.frame3 {
+	position: absolute;
+	width: inherit;
+}
+
+.slash, .normalStrike {
+    position: absolute;
+    z-index: -1;
+}
+
+.normalStrike{
+	width: 12vw;
+}
+
+.slash{
+    width: 100%;
+}
+
+.textArea {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.text{
+	font-family: "FF6";
+	font-weight: "bold";
+	font-size: 2.5rem;
+	color: white;
+	text-shadow: 2.5px 2.5px #020202;
+}
+
+/*text for bouncy damage*/
+.enemyDamage.text, .allyDamage.text{
+    text-align: center;
+    z-index: -1;
+    position: relative;
+    top: 100%;
+}
+
+.allyName, .allyHP, .atb{
+	display: inline-block;
+}
+
+.allyName{
+	width: 35%;
+}
+
+.allyHP, .atb{
+	width: 30%;
+}
+
+.allyHP.text {
+    padding-right: 1vw;
+}
+
+.atb{
+	position: relative;
+}
+
+.allyHP{
+	text-align: right;
+}
+
+.bar{
+	width: 90%;
+	position: relative;
+	z-index: 2;
+}
+
+.barBit {
+	position: absolute;
+	max-height: 0.6rem;
+	z-index: 1;
+	margin: auto;
+	left: 5%;
+}
+
+.subMenu {
+    z-index: -1;
+    height: 100%;
+    position: absolute;
+    width: 30.5%;
+    background-image: url("subMenu.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 4.5%;
+    animation: pulse 1s infinite;
+}
+
+.cancelButton, .maskCancelButton, .skillCancelButton{
+    z-index: -1;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    background-size: 100% 100%;
+    padding-top: 40%;
+}
+
+.magicMenu {
+    height: 100%;
+    position: absolute;
+    width: 65%;
+    background-image: url("magicMenu.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /*margin-top: -30.7%;*/
+    margin-left: 35%;
+    z-index: -1;
+}
+
+.optionsList {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.option {
+    text-align: center;
+}
+
+.vanished{
+	-webkit-filter: hue-rotate(200deg);
+	filter: hue-rotate(200deg);
+}
+
+.pointerFlow {
+    position: absolute;
+    width: 4%;
+    height: 4%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: firstPointer 0.5s infinite;
+    background-image: url("pointerFrame3.png");
+}
+
+/* animations */
+
+/* effects */
+@keyframes castBlackMagic{
+	0% {opacity: 0.33;}
+	10% {background-image: url("castBlackMagicFrame1.png");}
+	20% {background-image: url("castBlackMagicFrame2.png");}
+	30% {background-image: url("castBlackMagicFrame3.png");}
+	40% {background-image: url("castBlackMagicFrame4.png");}
+	50% {background-image: url("castBlackMagicFrame5.png");}
+	60% {background-image: url("castBlackMagicFrame6.png");}
+	70% {background-image: url("castBlackMagicFrame7.png");
+		opacity: 0.33;}
+	80% {background-image: url("castBlackMagicFrame8.png");}
+	90% {background-image: url("castBlackMagicFrame9.png");}
+	100% {background-image: url("castBlackMagicFrame10.png");
+		 opacity: 0;}
+}
+
+/* skills */
+@keyframes Fire{
+	11% {background-image: url("fire1Frame1.png");}
+	17.35% {background-image: url("fire1Frame2.png");}
+	23.7% {background-image: url("fire1Frame3.png");}
+	30.05% {background-image: url("fire1Frame4.png");}
+	36.4% {background-image: url("fire1Frame5.png");}
+	42.75% {background-image: url("fire1Frame6.png");}
+	49.1% {background-image: url("fire1Frame7.png");}
+	55.45% {background-image: url("fire1Frame8.png");}
+	61.8% {background-image: url("fire1Frame9.png");}
+	68.15% {background-image: url("fire1Frame10.png");}
+	74.5% {background-image: url("fire1Frame11.png");}
+	80.85% {background-image: url("fire1Frame12.png");}
+	87.2% {background-image: url("fire1Frame13.png");}
+	93.55% {background-image: url("fire1Frame14.png");}
+	100% {background-image: url("fire1Frame15.png");}
+}
+
+@keyframes Ice{
+	3.92% {background-image: url("ice1Frame1.png");}
+	7.84% {background-image: url("ice1Frame2.png");}
+	11.76% {background-image: url("ice1Frame3.png");}
+	15.68% {background-image: url("ice1Frame4.png");}
+	19.61% {background-image: url("ice1Frame5.png");}
+	23.53% {background-image: url("ice1Frame6.png");}
+	27.45% {background-image: url("ice1Frame7.png");}
+	31.37% {background-image: url("ice1Frame8.png");}
+	35.29% {background-image: url("ice1Frame9.png");}
+	39.21% {background-image: url("ice1Frame10.png");}
+	43.13% {background-image: url("ice1Frame11.png");}
+	47.06% {background-image: url("ice1Frame12.png");}
+	51% {background-image: url("ice1Frame13.png");}
+	54.90% {background-image: url("ice1Frame14.png");}
+	58.82% {background-image: url("ice1Frame15.png");}
+	62.74% {background-image: url("ice1Frame16.png");}
+	66.66% {background-image: url("ice1Frame17.png");} /*400ms*/
+	79.17% {background-image: url("ice1Frame18.png");}
+	83.34% {background-image: url("ice1Frame19.png");}
+	87.51% {background-image: url("ice1Frame20.png");
+			opacity: 1;}
+	91.68% {background-image: url("ice1Frame21.png");}
+	95.85% {background-image: url("ice1Frame22.png");}
+	100% {background-image: url("ice1Frame23.png");
+			opacity: 0.5;} /*600ms*/
+}
+
+@keyframes normalSlashAnimation{
+	12.5% {background-image: url("slashFrame1.png");}
+	25% {background-image: url("slashFrame2.png");}
+	37.5% {background-image: url("slashFrame3.png");}
+	50% {background-image: url("slashFrame4.png");}
+	62.5% {background-image: url("slashFrame5.png");}
+	75% {background-image: url("slashFrame6.png");}
+	87.5% {background-image: url("slashFrame7.png");}
+	100% {background-image: url("slashFrame8.png");}
+}
+
+/* menus and sprites */
+
+@keyframes pulseRed{
+   0% {filter: hue-rotate(90deg) brightness(100%);}
+   50% {filter: hue-rotate(90deg) brightness(120%);}
+   100% {filter: hue-rotate(90deg) brightness(100%);}
+}
+
+@keyframes pulse{
+   0% {filter: brightness(100%);}
+   50% {filter: brightness(120%);}
+   100% {filter: brightness(100%);}
+}
+
+@keyframes pulseHarder{
+   0% {filter: brightness(100%);}
+   50% {filter: brightness(150%);}
+   100% {filter: brightness(100%);}
+}
+
+@keyframes firstPointer{
+   25% {background-image: url("pointerFrame2.png");}
+   50% {background-image: url("pointerFrame1.png");}
+}
+
+@keyframes terraCast{
+	50% {background-image: url("terraCast2.png");}
+	100% {background-image: url("terraCast1.png");}
+}
+
+@keyframes celesCast{
+	50% {background-image: url("celesCast2.png");}
+	100% {background-image: url("celesCast1.png");}
+}
+
+@keyframes enemyBlink{
+	24.9% {filter: none;}
+	25% {filter: grayscale(100%) brightness(300%) contrast(400%) invert(100%);}
+	49.9% {filter: grayscale(100%) brightness(300%) contrast(400%) invert(100%);}
+	50% {filter: none;}
+	74.9% {filter: none;}
+	75% {filter: grayscale(100%) brightness(300%) contrast(400%) invert(100%);}
+	99.9% {filter: grayscale(100%) brightness(300%) contrast(400%) invert(100%);}
+	100%{filter: none;}
+}
+
+@keyframes enemyDown{
+	0% {filter: sepia(1) saturate(5) hue-rotate(240deg);}
+	100% {filter: sepia(1) saturate(5) hue-rotate(240deg);
+		  opacity: 0;
+		 } 
+}
+
+@keyframes loadAll{
+	1% {background-image: url(castBlackMagicFrame1.png);}
+	2% {background-image: url(castBlackMagicFrame2.png);}
+	3% {background-image: url(castBlackMagicFrame3.png);}
+	4% {background-image: url(castBlackMagicFrame4.png);}
+	5% {background-image: url(castBlackMagicFrame5.png);}
+	6% {background-image: url(castBlackMagicFrame6.png);}
+	7% {background-image: url(castBlackMagicFrame7.png);}
+	8% {background-image: url(castBlackMagicFrame8.png);}
+	9% {background-image: url(castBlackMagicFrame9.png);}
+	10% {background-image: url(castBlackMagicFrame10.png);}
+	11% {background-image: url(celesAttack1.png);}
+	12% {background-image: url(celesAttack2.png);}
+	13% {background-image: url(celesCast1.png);}
+	14% {background-image: url(celesCast2.png);}
+	15% {background-image: url(celesCast3.png);}
+	16% {background-image: url(celesDown.png);}
+	17% {background-image: url(celesFight.png);}
+	18% {background-image: url(celesFlipWalk.png);}
+	19% {background-image: url(celesHurt.png);}
+	20% {background-image: url(celesIdle.png);}
+	21% {background-image: url(celesReturn.png);}
+	22% {background-image: url(celesSit.png);}
+	23% {background-image: url(celesWalk.png);}
+	24% {background-image: url(terraAttack1.png);}
+	25% {background-image: url(terraAttack2.png);}
+	26% {background-image: url(terraCast1.png);}
+	27% {background-image: url(terraCast2.png);}
+	28% {background-image: url(terraCast3.png);}
+	29% {background-image: url(terraDown.png);}
+	30% {background-image: url(terraFight.png);}
+	31% {background-image: url(terraFlipWalk.png);}
+	32% {background-image: url(terraHurt.png);}
+	33% {background-image: url(terraIdle.png);}
+	34% {background-image: url(terraReturn.png);}
+	35% {background-image: url(terraSit.png);}
+	36% {background-image: url(terraWalk.png);}
+	37% {background-image: url(sword.png);}
+	38% {background-image: url(swordFrame1.png);}
+	39% {background-image: url(swordFrame2.png);}
+	40% {background-image: url(swordFrame3.png);}
+	41% {background-image: url(fire1Frame1.png);}
+	42% {background-image: url(fire1Frame2.png);}
+	43% {background-image: url(fire1Frame3.png);}
+	44% {background-image: url(fire1Frame4.png);}
+	45% {background-image: url(fire1Frame5.png);}
+	46% {background-image: url(fire1Frame6.png);}
+	47% {background-image: url(fire1Frame7.png);}
+	48% {background-image: url(fire1Frame8.png);}
+	49% {background-image: url(fire1Frame9.png);}
+	50% {background-image: url(fire1Frame10.png);}
+	51% {background-image: url(fire1Frame11.png);}
+	52% {background-image: url(fire1Frame12.png);}
+	53% {background-image: url(fire1Frame13.png);}
+	54% {background-image: url(fire1Frame14.png);}
+	55% {background-image: url(fire1Frame15.png);}
+	56% {background-image: url(ice1Frame1.png);}
+	57% {background-image: url(ice1Frame2.png);}
+	58% {background-image: url(ice1Frame3.png);}
+	59% {background-image: url(ice1Frame4.png);}
+	60% {background-image: url(ice1Frame5.png);}
+	61% {background-image: url(ice1Frame6.png);}
+	62% {background-image: url(ice1Frame7.png);}
+	63% {background-image: url(ice1Frame8.png);}
+	64% {background-image: url(ice1Frame9.png);}
+	65% {background-image: url(ice1Frame10.png);}
+	66% {background-image: url(ice1Frame11.png);}
+	67% {background-image: url(ice1Frame12.png);}
+	68% {background-image: url(ice1Frame13.png);}
+	69% {background-image: url(ice1Frame14.png);}
+	70% {background-image: url(ice1Frame15.png);}
+	71% {background-image: url(ice1Frame16.png);}
+	72% {background-image: url(ice1Frame17.png);}
+	73% {background-image: url(ice1Frame18.png);}
+	74% {background-image: url(ice1Frame19.png);}
+	75% {background-image: url(ice1Frame20.png);}
+	76% {background-image: url(ice1Frame21.png);}
+	77% {background-image: url(ice1Frame22.png);}
+	78% {background-image: url(ice1Frame23.png);}
+	100% {background-image: none;}
+}
+
+
+
+/* @font-face kit by Fonts2u (https://fonts2u.com) */ 
+@font-face {
+	font-family:"FF6";
+	src: url("final_fantasy_36_font.eot?") format("eot"), url("final_fantasy_36_font.woff") format("woff"), url("final_fantasy_36_font.ttf") format("truetype"), url("final_fantasy_36_font.svg#Final-Fantasy-3/6-Font") format("svg");
+	font-weight:normal;
+	font-style:normal;
+}
+
+@media screen and (max-width: 800px) {
+	.text{
+		font-size: 2rem;
+		text-shadow: 2.5px 3px #020202;
+	}  
+}
+
+@media screen and (max-width: 600px) {
+	.text{
+		font-size: 1.5rem;
+		text-shadow: 1.5px 1.5px #020202;
+	}  
+}

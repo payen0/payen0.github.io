@@ -1,0 +1,163 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>FF6 html, css, js</title>
+
+	<script src="update.js" defer></script>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+	<div class="void">
+		<div id="pageContent" class="appArea">
+			<div id="upper">
+				<img id="backgroundImage" src="grass.png" class="background">
+				<div class="textBox">
+					<div class="text">
+						Got 41 Exp. point(s)
+					</div>
+				</div>
+				<div class="enemySprite enemy0 enemy">
+					<div class="frontSprite"></div>
+					<div class="spellBox"></div>
+					<div class="skillSprite"></div>
+					<div class="backgroundSprite enemySprite"></div>
+					<div class="enemyDamage damage text"></div>
+				</div>
+				<div class="enemySprite enemy1 enemy">
+					<div class="frontSprite"></div>
+					<div class="spellBox"></div>
+					<div class="skillSprite"></div>
+					<div class="backgroundSprite enemySprite"></div>
+					<div class="enemyDamage damage text"></div>
+				</div>
+				<div class="enemySprite enemy2 enemy">
+					<div class="frontSprite"></div>
+					<div class="spellBox"></div>
+					<div class="skillSprite"></div>
+					<div class="backgroundSprite enemySprite"></div>
+					<div class="enemyDamage damage text"></div>
+				</div>
+				
+				<div class="allySprite terra ally">
+					<div class="upperSprite"></div>
+					<div class="frontSprite"></div>
+					<div class="spellBox"></div>
+					<div class="skillSprite"></div>
+					<div class="backgroundSprite"></div>
+					<div class="allyDamage damage text"></div>
+				</div>
+				<div class="allySprite celes ally">
+					<div class="upperSprite"></div>
+					<div class="frontSprite"></div>
+					<div class="spellBox"></div>
+					<div class="skillSprite"></div>
+					<div class="backgroundSprite"></div>
+					<div class="allyDamage damage text"></div>
+				</div>
+				<div class="pointerFlow"></div>
+				<div class="hitFrames" style="top: 50%; left: 75%;">
+					<img src="normalStrikeFrame1.png" class="normalStrike frame1">
+					<img src="normalStrikeFrame2.png" class="normalStrike frame2">
+					<img src="normalStrikeFrame3.png" class="normalStrike frame3">
+					<img src="normalStrikeFrame4.png" class="normalStrike frame4">
+				</div>
+				<div class="frontSwordFrames">
+					<img src="swordFrame1.png" class="sword frame1">
+					<img src="swordFrame2.png" class="sword frame2">
+					<img src="swordFrame3.png" class="sword frame3">
+				</div>
+				<div class="weaponSprites">
+					<img src="sword.png" class="sword">
+				</div>
+			</div>
+			<div id="lower">
+				<div class="terra subMenu">
+					<ul class="optionsList">
+						<li class="fightOption text">Fight</li>
+						<li class="magicOption text">Magic</li>
+					</ul>
+				</div>
+				<div class="celes subMenu">
+					<ul class="optionsList">
+						<li class="fightOption text">Fight</li>
+						<li class="magicOption text">Magic</li>
+					</ul>
+				</div>
+				<div class="magicMenu">
+					<ul class="optionsList">
+						<li class="text spellFire1">Fire</li>
+						<li class="text spellIce1">Ice</li>
+						<li class="text spellCure1">Cure</li>
+					</ul>
+				</div>
+				<div id="cancel" class="subMenu">
+					<div class="cancelButton">
+						<div class="option text">Cancel</div>
+					</div>
+					<div class="maskCancelButton"></div>
+					<div class="skillCancelButton"></div>
+				</div>
+				<div class="textArea">
+					<div id="enemyArea">
+						<div class="enemyState">
+							<div class="enemy0">
+								<div class="enemyName text">Leafer</div>
+								<div class="enemyHP hidden">100</div>
+								<div class="enemyMP hidden">0</div>
+								<div class="stat hidden">attack:13defense:60evasion:0magicDefense:140magicEvasion:0speed:30magic:0hitRate:100hp:33mp:0</div>
+								<div class="ready hidden">no</div>
+							</div>
+						</div>
+						<div class="enemyState">
+							<div class="enemy1">
+								<div class="enemyHP hidden">100</div>
+								<div class="enemyMP hidden">0</div>
+								<div class="stat hidden">attack:13defense:60evasion:0magicDefense:140magicEvasion:0speed:30magic:0hitRate:100hp:33mp:0</div>
+								<div class="ready hidden">no</div>
+							</div>
+						</div>
+						<div class="enemyState">
+							<div class="enemy2">
+								<div class="enemyHP hidden">100</div>
+								<div class="enemyMP hidden">0</div>
+								<div class="stat hidden">attack:13defense:60evasion:0magicDefense:140magicEvasion:0speed:30magic:0hitRate:100hp:33mp:0</div>
+								<div class="ready hidden">no</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="allyArea">
+						<div class="allyState">
+							<div class="terra">
+								<div class="allyName text">TERRA</div>
+								<div class="allyHP text">74</div>
+								<div class="allyMP hidden">16</div>
+								<div class="atb">
+									<img src="bar.png" class="bar">
+									<img src="atbBit.png" class="barBit">
+								</div>
+								<div class="stat hidden">attack:12defense:42evasion:5magicDefense:33magicEvasion:7speed:33magic:39hitRate:100hp:40mp:16</div>
+								<div class="ready hidden">no</div>
+							</div>
+							<div class="celes">
+								<div class="allyName text">CELES</div>
+								<div class="allyHP text">74</div>
+								<div class="allyMP hidden">16</div>
+								<div class="atb">
+									<img src="bar.png" class="bar">
+									<img src="atbBit.png" class="barBit">
+								</div>
+								<div class="stat hidden">attack:12defense:42evasion:5magicDefense:33magicEvasion:7speed:33magic:39hitRate:100hp:40mp:16</div>
+								<div class="ready hidden">no</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="loadArea"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
