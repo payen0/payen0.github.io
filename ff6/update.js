@@ -312,9 +312,9 @@ function spritesPulseHarder(skill){
 		unit = unitList[i]
 		if (checkValidTarget(unit, skill)){
 			if (units[unit]["activeSprite"].style.animation.includes("Cast"))
-			animation = units[unit]["castAnimation"] + ", pulseHarder 1s infinite";
+				animation = units[unit]["castAnimation"] + ", pulseHarder 1s infinite";
 			else
-			animation = "pulseHarder 1s infinite";
+				animation = "pulseHarder 1s infinite";
 
 			switchAnimation(unit, animation);
 		}
@@ -329,13 +329,20 @@ function spritesStopPulseHarder(){
 
 	for (let i = 0; i < unitList.length; i++){
 		unit = unitList[i]
-		if (units[unit]["activeSpriteName"].includes("cast")){
-			animation = units[unit]["castAnimation"];
-		}
-		else
-			animation = "none";
+		animation = units[unit]["activeSprite"].style.animation
 
-		switchAnimation(unit, animation);
+		if (animation.includes("pulseHarder")){
+			if(animation.includes(", pulseHarder 1s infinite"))
+				animation = animation.replace(", pulseHarder 1s infinite", "")
+
+			if(animation.includes("pulseHarder 1s infinite"))
+				animation = animation.replace("pulseHarder 1s infinite", "");
+
+			if(animation.includes("pulseHarder"))
+				animation = animation.replace("pulseHarder", "");
+
+			switchAnimation(unit, animation);
+		}
 	}
 }
 
@@ -1316,7 +1323,7 @@ function initialization(){
 		units["enemy2"]["position"].style.left = "46%";
 		units["enemy2"]["damage"].style.top = "100%";
 
-		document.getElementById("loadArea").style.animation = "10s loadAll 1"
+		document.getElementById("loadArea").style.animation = "5s loadAll 1"
 
 	} catch(e){setTimeout(initialization, 100);}
 }
