@@ -10,18 +10,18 @@ html{
 
 #upper {
     width: 100%;
-    aspect-ratio: 1/0.635;
     max-width: 800px;
     margin: auto;
     position: relative;
     display: inline flow-root list-item;
+    height: 63.5%;
     background-image: url(grass.png);
-    background-size: cover;	
+	background-size: cover;	
 }
 
 #lower {
+    height: 30.5%;
     width: 100%;
-    aspect-ratio: 1/0.365;
     background-image: url("menu.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -212,7 +212,7 @@ html{
 }
 
 .normalStrike{
-	width: 12vw;
+	width: 100%;
 }
 
 .slash{
@@ -227,7 +227,6 @@ html{
 
 .text{
 	font-family: "FF6";
-	font-weight: bold;
 	font-size: 2.5rem;
 	color: white;
 	text-shadow: 2.5px 2.5px #020202;
@@ -320,8 +319,20 @@ html{
     text-align: center;
 }
 
+.optionsList li:hover{
+	cursor: pointer;
+}
+
 .option {
     text-align: center;
+}
+
+.maskCancelButton:hover, .skillCancelButton:hover, .cancelButton:hover{
+	cursor: pointer;
+}
+
+.selectable:hover{
+	cursor: pointer;
 }
 
 .vanished{
@@ -417,6 +428,23 @@ html{
 	100% {background-image: url("slashFrame8.png");}
 }
 
+@keyframes normalStrikeAnimation{
+	7.14% {background-image: url("strikeFrame1.png");}
+	14.28% {background-image: url("strikeFrame2.png");}
+	21.42% {background-image: url("strikeFrame3.png");}
+	28.57% {background-image: url("strikeFrame4.png");}
+	35.71% {background-image: url("strikeFrame5.png");}
+	42.86% {background-image: url("strikeFrame6.png");}
+	50% {background-image: url("strikeFrame7.png");}
+	57.14% {background-image: url("strikeFrame8.png");}
+	64.28% {background-image: url("strikeFrame9.png");}
+	71.42% {background-image: url("strikeFrame10.png");}
+	78.57% {background-image: url("strikeFrame11.png");}
+	85.71% {background-image: url("strikeFrame12.png");}
+	92.86% {background-image: url("strikeFrame13.png");}
+	100% {background-image: url("strikeFrame14.png");}
+}
+
 /* menus and sprites */
 
 @keyframes pulseRed{
@@ -471,15 +499,15 @@ html{
 }
 
 @keyframes loadAll{
-	1% {background-image: url(castBlackMagicFrame1.png);}
-	2% {background-image: url(castBlackMagicFrame2.png);}
-	3% {background-image: url(castBlackMagicFrame3.png);}
-	4% {background-image: url(castBlackMagicFrame4.png);}
-	5% {background-image: url(castBlackMagicFrame5.png);}
-	6% {background-image: url(castBlackMagicFrame6.png);}
-	7% {background-image: url(castBlackMagicFrame7.png);}
-	8% {background-image: url(castBlackMagicFrame8.png);}
-	9% {background-image: url(castBlackMagicFrame9.png);}
+	1%  {background-image: url(castBlackMagicFrame1.png);}
+	2%  {background-image: url(castBlackMagicFrame2.png);}
+	3%  {background-image: url(castBlackMagicFrame3.png);}
+	4%  {background-image: url(castBlackMagicFrame4.png);}
+	5%  {background-image: url(castBlackMagicFrame5.png);}
+	6%  {background-image: url(castBlackMagicFrame6.png);}
+	7%  {background-image: url(castBlackMagicFrame7.png);}
+	8%  {background-image: url(castBlackMagicFrame8.png);}
+	9%  {background-image: url(castBlackMagicFrame9.png);}
 	10% {background-image: url(castBlackMagicFrame10.png);}
 	11% {background-image: url(celesAttack1.png);}
 	12% {background-image: url(celesAttack2.png);}
@@ -557,6 +585,23 @@ html{
 	84% {background-image: url(slashFrame6.png);}
 	85% {background-image: url(slashFrame7.png);}
 	86% {background-image: url(slashFrame8.png);}
+	87% {background-image: url(swordFrame1.png);}
+	88% {background-image: url(swordFrame2.png);}
+	89% {background-image: url(swordFrame3.png);}
+	90% {background-image: url(strikeFrame1.png);}
+	91% {background-image: url(strikeFrame2.png);}
+	92% {background-image: url(strikeFrame3.png);}
+	93% {background-image: url(strikeFrame4.png);}
+	94% {background-image: url(strikeFrame5.png);}
+	95% {background-image: url(strikeFrame6.png);}
+	96% {background-image: url(strikeFrame7.png);}
+	97% {background-image: url(strikeFrame8.png);}
+	98% {background-image: url(strikeFrame9.png);}
+	99% {background-image: url(strikeFrame10.png);}
+	92.5% {background-image: url(strikeFrame11.png);}
+	93.5% {background-image: url(strikeFrame12.png);}
+	94.5% {background-image: url(strikeFrame13.png);}
+	95.5% {background-image: url(strikeFrame14.png);}
 	100% {background-image: none;}
 }
 

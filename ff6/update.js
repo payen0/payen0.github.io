@@ -23,16 +23,8 @@ var castAnimation= {"black": "castBlackMagic 0.5s 1",
 					"white": "castWhiteMagic 0.5s 1"
 };
 
-var weaponTypeAnimation = {"slash": {"animation": function(target){
-												   		normalSlashAnimation(target);
-									  			  },
-									"delayBeforeDamage": 350
-						  },
-						  "strike": {"animation": function(target){
-														strikeAnimation(target);
-									},
-									"delayBeforeDamage": 600
-						  }
+var weaponTypeAnimation = {"slash": {"animation": function(target){normalSlashAnimation(target);}, "delayBeforeDamage": 350},
+						               "strike": {"animation": function(target){normalStrikeAnimation(target);}, "delayBeforeDamage": 600}
 }
 
 var textBox = 0;
@@ -114,100 +106,19 @@ function normalSlashAnimation(target){
 }
 
 // strike animation
-function strikeAnimation(target){
-	let initialTop = parseInt(units[target]["position"].style.top);
-	let initialLeft = parseInt(units[target]["position"].style.left);
-	
-	animate({
-		duration: 500,
-		timing(timeFraction) {
-			return timeFraction;
-		},
-		draw(progress) {
-			if (progress < 0.070){
-						
+function normalStrikeAnimation(target){
+  let spellBox = document.querySelector("." + target + " > .spellBox")
 
-				hitFrames.style.top = initialTop + 3 + "%";
-				hitFrames.style.left = initialLeft + 3 + "%";
-				slash["normalStrike"]["frame1"].style.zIndex = 10;
+	spellBox.style.width = "220%";
+	spellBox.style.height = "220%";
+	spellBox.style.top = "-40%";
+	spellBox.style.left = "-40%";
 
-				units[target]["position"].style.left = initialLeft + 0.5 + "%";
-			}
-			else if (progress < 0.140){
-				slash["normalStrike"]["frame1"].style.zIndex = -1;
-				slash["normalStrike"]["frame2"].style.zIndex = 10;
-			}
-			else if (progress < 0.210){
-				slash["normalStrike"]["frame2"].style.zIndex = -1;
-				slash["normalStrike"]["frame3"].style.zIndex = 10;
-			}
-			else if (progress < 0.280){
-				slash["normalStrike"]["frame3"].style.zIndex = -1;
-				slash["normalStrike"]["frame4"].style.zIndex = 10;
-			}
-			else if (progress < 0.350){
-				slash["normalStrike"]["frame4"].style.zIndex = -1;
+	spellBox.style.animation = "normalStrikeAnimation 0.5s linear 1";
 
-				hitFrames.style.top = initialTop - 6 + "%";
-				hitFrames.style.left = initialLeft - 6 + "%";
-
-				slash["normalStrike"]["frame1"].style.zIndex = 10;
-			}
-			else if (progress < 0.420){
-				slash["normalStrike"]["frame1"].style.zIndex = -1;
-				slash["normalStrike"]["frame2"].style.zIndex = 10;
-			}
-			else if (progress < 0.490){
-				slash["normalStrike"]["frame2"].style.zIndex = -1;
-				slash["normalStrike"]["frame3"].style.zIndex = 10;
-			}
-			else if (progress < 0.560){
-				slash["normalStrike"]["frame3"].style.zIndex = -1;
-				slash["normalStrike"]["frame4"].style.zIndex = 10;
-			}
-			else if (progress < 0.630){
-				slash["normalStrike"]["frame4"].style.zIndex = -1;
-				hitFrames.style.top = initialTop - 1 + "%";
-				hitFrames.style.left = initialLeft - 1 + "%";
-
-				slash["normalStrike"]["frame1"].style.zIndex = 10;
-			}
-			else if (progress < 0.680){
-				slash["normalStrike"]["frame1"].style.zIndex = -1;
-				slash["normalStrike"]["frame2"].style.zIndex = 10;
-			}
-			else if (progress < 0.750){
-				slash["normalStrike"]["frame2"].style.zIndex = -1;
-				slash["normalStrike"]["frame3"].style.zIndex = 10;
-			}
-			else if (progress < 0.820){
-				slash["normalStrike"]["frame3"].style.zIndex = -1;
-				slash["normalStrike"]["frame4"].style.zIndex = 10;
-			}
-			else if (progress < 0.890){
-				slash["normalStrike"]["frame4"].style.zIndex = -1;
-				hitFrames.style.top = initialTop - 6 + "%";
-				hitFrames.style.left = initialLeft + 3 + "%";
-
-				slash["normalStrike"]["frame1"].style.zIndex = 10;
-			}
-			else if (progress < 0.960){
-				slash["normalStrike"]["frame1"].style.zIndex = -1;
-				slash["normalStrike"]["frame2"].style.zIndex = 10;
-			}
-			/*else if (progress < 1){
-				slash["normalStrike"]["frame2"].style.zIndex = -1;
-			}*/
-			else if (progress == 1){
-				slash["normalStrike"]["frame1"].style.zIndex = -1;
-				slash["normalStrike"]["frame2"].style.zIndex = -1;
-				slash["normalStrike"]["frame3"].style.zIndex = -1;
-				slash["normalStrike"]["frame4"].style.zIndex = -1;
-
-				units[target]["position"].style.left = initialLeft + "%";
-			}
-		}
-	});
+	setTimeout(function(){
+		spellBox.style.animation = "none";
+	}, 800);		
 }
 
 // SECONDARY WEAPON ANIMATIONS
@@ -317,6 +228,7 @@ function spritesPulseHarder(skill){
 				animation = "pulseHarder 1s infinite";
 
 			switchAnimation(unit, animation);
+			units[unit]["frontSprite"].classList.add("selectable");
 		}
 	}
 }
@@ -342,6 +254,7 @@ function spritesStopPulseHarder(){
 				animation = animation.replace("pulseHarder", "");
 
 			switchAnimation(unit, animation);
+			units[unit]["frontSprite"].classList.remove("selectable")
 		}
 	}
 }
@@ -445,7 +358,7 @@ function assessGame(target){
 			switchAnimation(target, "enemyDown 0.25s 1");
 			setTimeout(function(){
 				units[target]["activeSprite"].style.zIndex = -1;
-				document.querySelector("." + target + " > .frontSprite").style.zIndex = -1;
+				units[target]["frontSprite"].style.zIndex = -1;
 			}, 250)
 		}
 		
@@ -1040,6 +953,7 @@ function initializeCharacters(c, char){
 									 "cast3": "url("+c+"Cast3.png)"
 									},
 					"activeSprite": document.querySelector(char + " > .backgroundSprite"),
+					"frontSprite": document.querySelector(char + " > .frontSprite"),
 					"activeSpriteName": "idle",
 					"oldAnimation": "none",
 					"upperSprites": {"status": "ok"},
@@ -1076,6 +990,7 @@ function initializeEnemies(c, char){
 									 					"hurt": "url(leafer.png)"
 								},
 								"activeSprite": document.querySelector(char + " > .enemySprite"),
+								"frontSprite": document.querySelector(char + " > .frontSprite"),
 								"activeSpriteName": "idle",
 								"action": "idle",
 								"subMenu": 0,
@@ -1254,8 +1169,8 @@ function addAllyEventListeners(character){
 }
 
 function addTargetability(unit){
-	document.querySelector(unit + " > .frontSprite").addEventListener("click", function(){
-		globalTarget = unit;
+	units[unit]["frontSprite"].addEventListener("click", function(){
+		globalTarget = "." + unit;
 	})
 }
 
@@ -1285,7 +1200,7 @@ function initialization(){
 			restartAllyBar(character);
 
 			// can become a target when clicked
-			addTargetability(characterClass);
+			addTargetability(character);
 		}
 
 		units["terra"]["position"].style.top = "46%";
@@ -1308,7 +1223,7 @@ function initialization(){
 			restartEnemyBar(enemy, enemyClass);
 
 			// can become a target when clicked
-			addTargetability(enemyClass);
+			addTargetability(enemy);
 		}
 
 		units["enemy0"]["position"].style.top = "67%";
