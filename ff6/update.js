@@ -787,7 +787,7 @@ function walkToCastMagic(character){
 
 	if (!lowHP(character)){
 		switchSprites(character, "idle");
-		switchAnimation(character, "none"); // CAMBIAR ESTO PARA QUE LA ANIMACIÓN DE PULSE PERMANEZCA¿
+		switchAnimation(character, "none");
 	}
 
 	units[character]["action"] = units[character]["activeSpriteName"];
@@ -964,7 +964,7 @@ function initializeCharacters(c, char){
 					"oldAnimation": "none",
 					"upperSprites": {"status": "ok"},
 					"atb": document.querySelector(char + " > .atb > .barBit"), 
-				    "atbDuration":  Math.floor(Math.random() * (4000 + 1 - 3000)) + 3000,
+				    "atbDuration":  Math.floor(Math.random() * (4000 + 1 - 3000)) + 5000,
 				    "subMenu": 0,
 					"position": document.querySelector(char + ".allySprite"),
 					"skillSprite": document.querySelector(char + "> .skillSprite"),
