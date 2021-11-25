@@ -327,10 +327,6 @@ html{
     text-align: center;
 }
 
-.maskCancelButton:hover, .skillCancelButton:hover, .cancelButton:hover{
-	cursor: pointer;
-}
-
 .selectable:hover{
 	cursor: pointer;
 }
