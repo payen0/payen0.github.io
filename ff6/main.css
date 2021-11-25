@@ -10,18 +10,18 @@ html{
 
 #upper {
     width: 100%;
+    aspect-ratio: 1/0.635;
     max-width: 800px;
     margin: auto;
     position: relative;
     display: inline flow-root list-item;
-    height: 63.5%;
     background-image: url(grass.png);
-	background-size: cover;	
+    background-size: cover;	
 }
 
 #lower {
-    height: 30.5%;
     width: 100%;
+    aspect-ratio: 1/0.365;
     background-image: url("menu.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -227,7 +227,7 @@ html{
 
 .text{
 	font-family: "FF6";
-	font-weight: "bold";
+	font-weight: bold;
 	font-size: 2.5rem;
 	color: white;
 	text-shadow: 2.5px 2.5px #020202;
