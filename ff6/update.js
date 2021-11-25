@@ -326,6 +326,12 @@ function displayDamage(progress, unitDamage, damage, initialTop){
 	/*
 	inputs: progress is the stage of a given attack animation
 	*/
+
+	if (damage < 0){
+		unitDamage.style.color = "#bbd7ab";
+		damage = -damage;
+	}
+
 	unitDamage.innerHTML = damage;
 	unitDamage.style.zIndex = 10;
 
@@ -1032,7 +1038,7 @@ function initializeSkills(){
 						  "height": "760%",
 						  "width": "300%",
 						  "top": "-630%",
-						  "left": "-100%",
+						  "left": "-70%",
 						  "power": 50, //21
 						  "mpCost": 4
 				},
