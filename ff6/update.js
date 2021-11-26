@@ -294,7 +294,7 @@ function showDamage(character, target, damage){
 	let unitDamage = units[target]["damage"];
 	let initialTop = parseInt(unitDamage.style.top);
 
-	units[target]["HP"] = units[target]["HP"] - damage; // deal damage to target 
+	units[target]["HP"] = Math.min(units[target]["HP"] - damage, units[target]["maxHP"]); // deal damage to target 
 
 	if (characterList.includes(target))
 		units[target]["outerHP"].innerHTML = units[target]["HP"];
@@ -973,8 +973,9 @@ function initializeCharacters(c, char, zIndex){
 					"position": document.querySelector(char + ".allySprite"),
 					"skillSprite": document.querySelector(char + "> .skillSprite"),
 					"HP": parseInt(document.querySelector(char + " > .allyHP").innerHTML),
-					"maxHP": 80,
+					"maxHP": parseInt(document.querySelector(char + " > .allyHP").innerHTML),
 					"MP": parseInt(document.querySelector(char + " > .allyMP").innerHTML),
+					"maxMP": parseInt(document.querySelector(char + " > .allyMP").innerHTML),
 					"outerHP": document.querySelector(char + " > .allyHP"),
 					"damage" : document.querySelector(char + " > .allyDamage"),
 					"active" : false,
@@ -1009,7 +1010,9 @@ function initializeEnemies(c, char){
 								"subMenu": 0,
 								"position": document.querySelector(char),
 								"HP": parseInt(document.querySelector(char + " > .enemyHP").innerHTML),
+								"maxHP": parseInt(document.querySelector(char + " > .enemyHP").innerHTML),
 								"MP": parseInt(document.querySelector(char + " > .enemyMP").innerHTML),
+								"maxMP": parseInt(document.querySelector(char + " > .enemyMP").innerHTML),
 								"damage": document.querySelector(char + " > .enemyDamage"),
 								"atbDuration":  Math.floor(Math.random() * (max + 1 - min)) + min,
 								"fightDuration": 1000
