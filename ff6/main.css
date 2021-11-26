@@ -413,6 +413,35 @@ html{
 			opacity: 0.5;} /*600ms*/
 }
 
+@keyframes Cure{
+	3.85%{background-image: url("cureFrame1.png");}
+	7.7%{background-image: url("cureFrame2.png");}
+	11.55%{background-image: url("cureFrame3.png");}
+	15.4%{background-image: url("cureFrame4.png");}
+	19.25%{background-image: url("cureFrame5.png");}
+	23.1%{background-image: url("cureFrame6.png");}
+	26.95%{background-image: url("cureFrame7.png");}
+	30.8%{background-image: url("cureFrame8.png");}
+	34.65%{background-image: url("cureFrame9.png");}
+	38.5%{background-image: url("cureFrame10.png");}
+	42.35%{background-image: url("cureFrame11.png");}
+	46.2%{background-image: url("cureFrame12.png");}
+	50.05%{background-image: url("cureFrame13.png");}
+    53.9%{background-image: url("cureFrame14.png");}
+	57.75%{background-image: url("cureFrame15.png");}
+	61.6%{background-image: url("cureFrame16.png");}
+	65.45%{background-image: url("cureFrame17.png");}
+	69.3%{background-image: url("cureFrame18.png");}
+	73.15%{background-image: url("cureFrame19.png");}
+	77%{background-image: url("cureFrame20.png");}
+	80.85%{background-image: url("cureFrame21.png");}
+	84.7%{background-image: url("cureFrame22.png");}
+	88.55%{background-image: url("cureFrame23.png");}
+	92.4%{background-image: url("cureFrame24.png");}
+	96.25%{background-image: url("cureFrame25.png");}
+	100%{background-image: url("cureFrame26.png");}
+}
+
 @keyframes normalSlashAnimation{
 	12.5% {background-image: url("slashFrame1.png");}
 	25% {background-image: url("slashFrame2.png");}
@@ -598,6 +627,32 @@ html{
 	93.5% {background-image: url(strikeFrame12.png);}
 	94.5% {background-image: url(strikeFrame13.png);}
 	95.5% {background-image: url(strikeFrame14.png);}
+	3.85%{background-image: url("cureFrame1.png");}
+	7.7%{background-image: url("cureFrame2.png");}
+	11.55%{background-image: url("cureFrame3.png");}
+	15.4%{background-image: url("cureFrame4.png");}
+	19.25%{background-image: url("cureFrame5.png");}
+	23.1%{background-image: url("cureFrame6.png");}
+	26.95%{background-image: url("cureFrame7.png");}
+	30.8%{background-image: url("cureFrame8.png");}
+	34.65%{background-image: url("cureFrame9.png");}
+	38.5%{background-image: url("cureFrame10.png");}
+	42.35%{background-image: url("cureFrame11.png");}
+	46.2%{background-image: url("cureFrame12.png");}
+	50.05%{background-image: url("cureFrame13.png");}
+    53.9%{background-image: url("cureFrame14.png");}
+	57.75%{background-image: url("cureFrame15.png");}
+	61.6%{background-image: url("cureFrame16.png");}
+	65.45%{background-image: url("cureFrame17.png");}
+	69.3%{background-image: url("cureFrame18.png");}
+	73.15%{background-image: url("cureFrame19.png");}
+	77%{background-image: url("cureFrame20.png");}
+	80.85%{background-image: url("cureFrame21.png");}
+	84.7%{background-image: url("cureFrame22.png");}
+	88.55%{background-image: url("cureFrame23.png");}
+	92.4%{background-image: url("cureFrame24.png");}
+	96.25%{background-image: url("cureFrame25.png");}
+	99.8%{background-image: url("cureFrame26.png");}
 	100% {background-image: none;}
 }
 

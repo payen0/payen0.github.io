@@ -331,6 +331,9 @@ function displayDamage(progress, unitDamage, damage, initialTop){
 		unitDamage.style.color = "#bbd7ab";
 		damage = -damage;
 	}
+	else{
+		unitDamage.style.color = "white";
+	}
 
 	unitDamage.innerHTML = damage;
 	unitDamage.style.zIndex = 10;
@@ -1025,7 +1028,7 @@ function initializeSkills(){
 						  "width": "250%",
 						  "top": "-20%",
 						  "left": "-75%",
-						  "power": 50, //21
+						  "power": 50,
 						  "mpCost": 4
 				},
 				"Ice": { "html": document.querySelector(".spellIce1"),
@@ -1038,22 +1041,22 @@ function initializeSkills(){
 						  "height": "760%",
 						  "width": "300%",
 						  "top": "-630%",
-						  "left": "-70%",
-						  "power": 50, //21
+						  "left": "-75%",
+						  "power": 50,
 						  "mpCost": 4
 				},
 				"Cure": {"html": document.querySelector(".spellCure1"),
 						  "animation": function(target, character){
-						  	spellAnimation(target, character, 800, "Fire");
+						  	spellAnimation(target, character, 1300, "Cure");
 						  },
 						  "type": "black",
 						  "element": "healing",
-						  "duration": 800,
-						  "height": "120%",
-						  "width": "200%",
-						  "top": "-10%",
-						  "left": "-50",
-						  "power": -100, //-10
+						  "duration": 1400,
+						  "height": "300%",
+						  "width": "250%",
+						  "top": "-85%",
+						  "left": "-45",
+						  "power": -100,
 						  "mpCost": 5
 				},
 	}
