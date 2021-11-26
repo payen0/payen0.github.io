@@ -164,7 +164,9 @@ html{
     width: 100vw;
 	height: 100vw;
     max-width: 1000px;
+    max-height: 1000px;
     min-width: 369px;
+    min-height: 369px;
     margin: auto;
 }
 
