@@ -111,8 +111,8 @@ function normalStrikeAnimation(target){
 
 	spellBox.style.width = "220%";
 	spellBox.style.height = "220%";
-	spellBox.style.top = "-40%";
-	spellBox.style.left = "-40%";
+	spellBox.style.top = "-50%";
+	spellBox.style.left = "-50%";
 
 	spellBox.style.animation = "normalStrikeAnimation 0.5s linear 1";
 
@@ -945,7 +945,7 @@ function fight(target, character, option, skill){
 
 // GAME INITIALIZATION FUNCTIONS 
 
-function initializeCharacters(c, char){
+function initializeCharacters(c, char, zIndex){
 	try{
 		units[c] = {"sprites":     {"idle": "url("+c+"Idle.png)",
 									 "fight": "url("+c+"Fight.png)",
@@ -963,6 +963,7 @@ function initializeCharacters(c, char){
 									},
 					"activeSprite": document.querySelector(char + " > .backgroundSprite"),
 					"frontSprite": document.querySelector(char + " > .frontSprite"),
+					"spellBox": document.querySelector(char + " > .spellBox"),
 					"activeSpriteName": "idle",
 					"oldAnimation": "none",
 					"upperSprites": {"status": "ok"},
@@ -986,6 +987,9 @@ function initializeCharacters(c, char){
 				}
 		units[c]["activeSprite"].style.backgroundImage = units[c]["sprites"]["idle"];
 		units[c]["activeSprite"].style.animation = "none";
+		units[c]["activeSprite"].style.zIndex = 2*zIndex + 1;
+		units[c]["spellBox"].style.zIndex = 2*zIndex + 2;
+
 		}catch(e){}
 }
 
@@ -1041,7 +1045,7 @@ function initializeSkills(){
 						  "height": "760%",
 						  "width": "300%",
 						  "top": "-630%",
-						  "left": "-75%",
+						  "left": "-100%",
 						  "power": 50,
 						  "mpCost": 4
 				},
@@ -1053,9 +1057,9 @@ function initializeSkills(){
 						  "element": "healing",
 						  "duration": 1400,
 						  "height": "300%",
-						  "width": "250%",
+						  "width": "300%",
 						  "top": "-85%",
-						  "left": "-45",
+						  "left": "-100%",
 						  "power": -100,
 						  "mpCost": 5
 				},
@@ -1197,7 +1201,7 @@ function initialization(){
 			let characterClass = "." + character;
 
 			// initializing characters' stats and sprites
-			initializeCharacters(character, characterClass);
+			initializeCharacters(character, characterClass, i);
 
 			// initializing submenus for characters
 			initializeSubMenus(character, characterClass);
