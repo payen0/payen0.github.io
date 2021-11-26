@@ -161,8 +161,8 @@ html{
 }
 
 .appArea {
-    width: 100%;
-    aspect-ratio: 1/1;
+    width: 100vw;
+	height: 100vw;
     max-width: 1000px;
     min-width: 369px;
     margin: auto;
